@@ -74,7 +74,7 @@ public class Regex {
         String email = scan.nextLine();
 
         // Provide regex pattern
-        pattern = Pattern.compile("^(?=.*46)[\\w-.].{10,}@gmail.com");
+        pattern = Pattern.compile("^[a-zA-Z0-9_.]*00[a-zA-Z0-9_.]*.{10,}+@gmail.com$");
 
         match = pattern.matcher(email);
 
@@ -125,8 +125,8 @@ public class Regex {
         String url = scan.nextLine();
 
         // Provide regex pattern
-        pattern = Pattern.compile("^(https?://)?[a-zA-Z0-9][a-zA-Z0-9-.]+\\.[a-zA-Z]{2,}(/[a-zA-Z0-9]+)*$");
-
+        pattern = Pattern.compile("^(https?://|https://)(www\\.)?[a-zA-Z0-9][a-zA-Z0-9-.]+\\.[a-zA-Z]{2,}(/[a-zA-Z0-9]+)*/?$");
+           
         match = pattern.matcher(url);
 
         isValid = match.matches();
